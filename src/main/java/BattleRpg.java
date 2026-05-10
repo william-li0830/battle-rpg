@@ -1,30 +1,26 @@
-import java.util.Scanner;
 
+import player.Player;
+import java.util.Scanner;
+import player.PlayerManager;
 
 /**
  *
  * @author willi
  */
 public class BattleRpg {
-    
+
     private static final Scanner scanner = new Scanner(System.in);
+    private static PlayerManager playerManager;
     private static Player player;
-    
+
     public static void main(String[] args) {
-
+        playerManager = new PlayerManager();
         System.out.println("=== BATTLE RPG =====");
-        login();
-    }
 
-    private static void login() {
-        System.out.println("Enter username:");
-        String name = scanner.nextLine();
-
-        System.out.println("Enter password:");
-        String pwd = scanner.nextLine();
-        
-        player = new Player(name, pwd);
-        showMenu();
+        while (true) {
+            player = playerManager.login();
+            showMenu();
+        }
     }
 
     private static void showMenu() {
@@ -47,7 +43,7 @@ public class BattleRpg {
                 case "3":
                     break;
                 case "4":
-                    break;
+                    return;
                 case "5":
                     System.exit(0);
                 default:

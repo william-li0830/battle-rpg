@@ -4,7 +4,7 @@ package weapon;
  *
  * @author willi
  */
-public abstract class Weapon {
+public class Weapon {
 
     private final String name;
     private final int power;

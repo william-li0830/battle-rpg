@@ -1,5 +1,6 @@
+package player;
+
 import weapon.Weapon;
-import weapon.WoodenSword;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Player {
 
         this.level = INITIAL_LEVEL;
         this.health = INITIAL_HEALTH;
-        this.weapon = new WoodenSword();
+        this.weapon = new Weapon("Wooden Sword", 5, 0);
         this.score = 0;
         this.points = 0;
         this.correctCount = 0;
@@ -42,6 +43,10 @@ public class Player {
     
     public String getUsername() {
         return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public int getLevel() {
